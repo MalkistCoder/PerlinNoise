@@ -23,7 +23,7 @@ body {
     color: var(--text);
 
     font-family: 'Instrument Sans', sans-serif;
-    
+
     overflow: hidden;
 }
 
@@ -31,7 +31,8 @@ canvas {
     border-radius: 0.75rem;
 }
 
-input, button {
+input,
+button {
     font-family: 'Instrument Sans', sans-serif;
 
     color: var(--text);
@@ -44,7 +45,7 @@ input, button {
     height: 100dvh;
 
     flex-direction: column;
-    
+
     align-items: center;
     justify-content: center;
 
@@ -52,6 +53,13 @@ input, button {
 }
 
 .title {
+    color: var(--primary);
+
+    filter: drop-shadow(-2px 0 0 var(--text))
+            drop-shadow(2px 0 0 var(--text))
+            drop-shadow(0 -2px 0 var(--text))
+            drop-shadow(0 2px 0 var(--text));
+
     font-size: 3rem;
     font-weight: 700;
 }
@@ -62,14 +70,14 @@ input, button {
     padding: 1rem 1.5rem;
 
     border: solid 2px var(--primary);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 
     flex-direction: column;
-    
+
     align-items: center;
     justify-content: center;
 
-    gap: .5rem;
+    gap: 0.5rem;
 }
 
 .settings > h2 {
@@ -86,7 +94,7 @@ input, button {
     justify-content: center;
 
     grid-template-columns: auto 8rem;
-    grid-gap: .25rem;
+    grid-gap: 0.25rem;
 }
 
 .config label {
@@ -94,10 +102,10 @@ input, button {
 }
 
 .config input {
-    padding: .25rem;
+    padding: 0.25rem;
 
     border: solid 1px var(--border);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 }
 
 .config input:disabled {
@@ -111,20 +119,20 @@ input, button {
     align-items: center;
     justify-content: center;
 
-    gap: .5rem;
+    gap: 0.5rem;
 }
 
-.extra-config > input[type=number] {
+.extra-config > input[type='number'] {
     width: 100%;
 }
 
 #generate {
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
 
-    border-radius: .5rem;
-    
+    border-radius: 0.5rem;
+
     background: var(--primary);
-    
+
     font-weight: 600;
 
     transition: all 200ms;

@@ -14,7 +14,6 @@ const config = {
     persistence: 0.5, // 0-1, + = more amplitude, - = less amplitude
 }
 
-
 const canvas: HTMLCanvasElement = document.getElementById('noise')! as HTMLCanvasElement
 const ctx: CanvasRenderingContext2D = canvas.getContext('2d')!
 
@@ -38,7 +37,8 @@ function initPerlins(seed: number) {
 
 initPerlins(config.seed)
 
-function fractalPerlinNoise(x: number, y: number): number { // returns floating point from 0 to 1
+function fractalPerlinNoise(x: number, y: number): number {
+    // returns floating point from 0 to 1
     let value = 0
     let relativeAmplitude = 1
     let relativeFrequency = 1
@@ -91,7 +91,6 @@ document.getElementById('generate')!.addEventListener('click', (e: MouseEvent) =
     config.octaves = parseInt((document.getElementById('octaves')! as HTMLInputElement).value) || 1
     config.lacunarity = parseFloat((document.getElementById('lacunarity')! as HTMLInputElement).value) || 2
     config.persistence = parseFloat((document.getElementById('persistence')! as HTMLInputElement).value) || 0.5
-
 
     console.log(`Perlin noise: ${config.width}x${config.height} (${config.width * config.height} cells) with ${config.octaves} octaves (L: ${config.lacunarity}, P: ${config.persistence}) (Seed: ${config.seed})`)
     initPerlins(config.seed)
