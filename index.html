@@ -4,32 +4,43 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite + TS</title>
+        <title>Perlin's Playground</title>
         <script type="module" src="/src/main.ts" defer></script>
     </head>
     <body>
         <div class="container">
-            <h1 class="title">Perlin Noise</h1>
-            <canvas id="noise"></canvas>
-            <div class="settings">
-                <h2>Settings</h2>
-                <div class="config">
-                    <label for="size">Scale:</label>
-                    <div class="extra-config">X: <input type="number" id="size-x" value="8" min="1" max="24" step="1" /> Y: <input type="number" id="size-y" value="8" min="1" max="24" step="1" /></div>
-                    <label for="octaves">Octaves:</label>
-                    <input type="number" id="octaves" value="3" min="1" max="7" step="1" />
-                    <label for="persistence">Persistence:</label>
-                    <input type="number" id="persistence" value="0.5" min="0" max="1" step="0.1" />
-                    <label for="lacunarity">Lacunarity:</label>
-                    <input type="number" id="lacunarity" value="2" min="1.5" max="10" step="0.5" />
-                    <label for="seed">Seed:</label>
-                    <div class="extra-config">
-                        <input type="number" id="seed" value="9001" min="0" max="4294967295" disabled />
-                        <input type="checkbox" name="use-seed" id="use-seed" />
+            <h1 class="title">Perlin's Playground</h1>
+            <main>
+                <canvas id="noise"></canvas>
+                <div class="settings">
+                    <h2>Settings</h2>
+                    <div class="config">
+                        <label for="size">Scale:</label>
+                        <div class="extra-config">
+                            X: <input type="number" id="size-x" value="8" min="1" max="24" step="1" /> 
+                            Y: <input type="number" id="size-y" value="8" min="1" max="24" step="1" />
+                        </div>
+                        <label for="octaves">Octaves:</label>
+                        <input type="number" id="octaves" value="3" min="1" max="8" step="1" />
+                        <label for="persistence">Persistence:</label>
+                        <div class="slider-config">
+                            <input type="range" id="persistence-slider" value="0.5" min="0" max="1" step="0.1">
+                            <input type="number" id="persistence" value="0.5" min="0" max="1" step="0.1" />
+                        </div>
+                        <label for="lacunarity">Lacunarity:</label>
+                        <div class="slider-config">
+                            <input type="range" id="lacunarity-slider" value="2" min="1.2" max="4" step="0.2">
+                            <input type="number" id="lacunarity" value="2" min="1.2" max="4" step="0.2" />
+                        </div>
+                        <label for="seed">Seed:</label>
+                        <div class="extra-config">
+                            <input type="number" id="seed" value="9001" min="0" max="4294967295" disabled />
+                            <input type="checkbox" name="use-seed" id="use-seed" />
+                        </div>
                     </div>
+                    <button id="generate">Generate</button>
                 </div>
-                <button id="generate">Generate</button>
-            </div>
+            </main>
         </div>
     </body>
 </html>

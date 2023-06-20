@@ -73,6 +73,17 @@ document.getElementById('use-seed')!.addEventListener('change', () => {
     seedElement.disabled = !seedElement.disabled
 })
 
+document.querySelectorAll('.slider-config').forEach(element => {
+    const [rangeInput, numberInput] = element.querySelectorAll('input')
+
+    rangeInput.addEventListener('input', (e: Event) => {
+        numberInput.value = (e.target as HTMLInputElement).value
+    })
+    numberInput.addEventListener('input', (e: Event) => {
+        rangeInput.value = (e.target as HTMLInputElement).value
+    })
+})
+
 document.getElementById('generate')!.addEventListener('click', (e: MouseEvent) => {
     const generateButton: HTMLButtonElement = e.target as HTMLButtonElement
 
@@ -81,7 +92,7 @@ document.getElementById('generate')!.addEventListener('click', (e: MouseEvent) =
     config.width = parseInt((document.getElementById('size-x')! as HTMLInputElement).value) || 8
     config.height = parseInt((document.getElementById('size-y')! as HTMLInputElement).value) || 8
 
-    config.cellSize = Math.round(512 / config.height)
+    config.cellSize = 512 / Math.max(config.width, config.height)
 
     canvas.width = config.width * config.cellSize
     canvas.height = config.height * config.cellSize
